@@ -38,7 +38,8 @@ public class App
        } 
        
       if (reply.equals("4") || reply.equals("muliplication")){
-
+	Binary multiply = Binary.multiply(binary1,binary2);
+	System.out.println("Their multiplcation is: " + multiply.getValue());
       }
       
 
