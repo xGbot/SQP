@@ -124,6 +124,53 @@ public class Binary
 		return result;
 	}
 	
+	public static Binary or(Binary num1, Binary num2)
+	{
+		// the index of the first digit of each number
+		int ind1=num1.number.length()-1;
+		int ind2=num2.number.length()-1;
+
+		// Binary value of result
+		String num3 = "";
+
+		// loop until one of the index is less than 0
+		while (ind1 >= 0 && ind2 >= 0){
+			if (num1.number.charAt(ind1) == '1' || num2.number.charAt(ind2) == '1') {
+				num3 = "1" + num3;
+			}
+			else{
+				num3 = "0" + num3;
+			}
+			ind1 -= 1;
+			ind2 -= 1;
+		}
+
+		// if either num1 or num2 still has values unaccounted for add them with own loop
+		if (ind1 >= 0) {
+			while (ind1 >= 0) {
+				if (num1.number.charAt(ind1) == '1') {
+					num3 = "1" + num3;
+				} else {
+					num3 = "0" + num3;
+				}
+				ind1 -= 1;
+			}
+		}
+		else if (ind2 >= 0) {
+			while (ind2 >= 0) {
+				if (num2.number.charAt(ind2) == '1') {
+					num3 = "1" + num3;
+				} else {
+					num3 = "0" + num3;
+				}
+				ind2 -= 1;
+			}
+		}
+
+		Binary result=new Binary(num3);  // create a binary object with the calculated value.
+		return result;
+	}
+	
 
 
 
