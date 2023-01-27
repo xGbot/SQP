@@ -1,5 +1,7 @@
 package com.ontariotechu.sofe3980U;
 import org.joda.time.LocalTime;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 /**
  * Hello world!
@@ -10,8 +12,9 @@ public class App
     public static void main( String[] args )
     {
       boolean cont = true;
-      LocalTime currentTime = new LocalTime();
-      System.out.println("The current local time is " + currentTime);
+      long millis = System.currentTimeMillis();
+      java.util.Date date = new java.util.Date(millis);
+      System.out.println("The current local time is " +date);
       while (cont=true) {
       Scanner scan=new Scanner(System.in);
       System.out.println("Select an operation: 1.Addition, 2.Or, 3.And, 4.multiplication, 5.exit ");
