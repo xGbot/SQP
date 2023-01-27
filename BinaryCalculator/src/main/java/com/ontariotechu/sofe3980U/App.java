@@ -16,8 +16,7 @@ public class App
         System.out.println( "Second binary number is "+binary2.getValue());
 		Binary sum= Binary.add(binary1,binary2);
 		System.out.println( "Their summation is "+sum.getValue());
-      Binary or= Binary.or(binary1, binary2);
-        System.out.println("Their or is " +or.getValue());
+      
       Binary and=Binary.and(binary1,binary2);
        System.out.println("Their and is " +and.getValue());
     }
