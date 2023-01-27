@@ -79,29 +79,7 @@ public class Binary
 		return result;
 		
 	}
-	public static Binary or(Binary num1, Binary num2){
-		int index1 = num1.number.length()-1;
-		int index2=num2.number.length()-1;
-		String num3="";
-		
-		while(index1 >= 0 && index2 >=0){
-
-			if(num1.number.charAt(index1)=='1' || num2.number.charAt(index2)=='1'){
-				num3 = '1' + num3;
-			}
-			else {
-				num3 = '0' + num3;
-			}
-			index1 -= 1;
-			index2 -= 1;
-		}
-
-		
-		Binary result=new Binary(num3);
-		return result;
-	}
-
-
+	
 	public static Binary and(Binary num1, Binary num2) 
 	{
 		//the index of the first digit of each number
