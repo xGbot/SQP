@@ -104,6 +104,26 @@ public class Binary
 		return result;
 	}
 	
+	public static Binary multiply(Binary number1, Binary number2) {
+		// store the binary numbers into a variable using getter
+		String bin_num1 = number1.getValue();
+		String bin_num2 = number2.getValue();
+
+		// convert the binary numbers into decimal
+		int dec_num1 = Integer.parseInt(bin_num1, 2);
+		int dec_num2 = Integer.parseInt(bin_num2, 2);
+		
+		// multiply the 2 decimal numbers
+		int dec_ans = dec_num1 * dec_num2;
+		
+		// convert the decimal answer to binary
+		String bin_ans = Integer.toBinaryString(dec_ans);
+
+		// write the answer as a binary object
+		Binary result = new Binary(bin_ans);
+		return result;
+	}
+	
 
 
 
