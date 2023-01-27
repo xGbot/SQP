@@ -29,7 +29,9 @@ public class App
          Binary sum= Binary.add(binary1,binary2);
             System.out.println( "Their summation is "+sum.getValue());
       }
-		if (reply.equals("2") || reply.equals("or")){
+      if (reply.equals("2") || reply.equals("or")){
+	    Binary or= Binary.or(binary1,binary2);
+            System.out.println( "Their or is "+or.getValue());
 
       }
       if (reply.equals("3") || reply.equals("and")){
