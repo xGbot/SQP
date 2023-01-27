@@ -17,7 +17,7 @@ public class App
       System.out.println("Select an operation: 1.Addition, 2.Or, 3.And, 4.multiplication, 5.exit ");
       String reply=scan.next();
       reply = reply.toLowerCase();
-      if (reply.equals("5") || reply.equals("quit")){
+      if (reply.equals("5") || reply.equals("exit")){
          cont=false;
          break;
       }
