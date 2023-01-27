@@ -38,7 +38,7 @@ public class App
 
       }
       if (reply.equals("3") || reply.equals("and")){
-      Binary and=Binary.And(binary1,binary2);
+      Binary and=Binary.and(binary1,binary2);
        System.out.println("Their and is " +and.getValue());
        } 
        
