@@ -170,6 +170,43 @@ public class Binary
 		Binary result=new Binary(num3);  // create a binary object with the calculated value.
 		return result;
 	}
+	// uses and
+	public static Binary And(Binary num1, Binary num2) {
+		//// checks digits
+		int ind3 = num1.number.length() - 1;
+		int ind4 = num2.number.length() - 1;
+		int and = 0;
+
+		//String keeps answer
+		String Answer = "";
+		//
+		while (ind3 >= 0 || ind4 >= 0) {
+			// store the digits of each number
+			int x = 0;
+			int y = 0;
+			and = 0;
+
+			// if statement if numbers are left
+			if (ind3 >= 0) {
+				x = (num1.number.charAt(ind3) == '1') ? 1 : 0;
+				// is 1 if not then it stores o
+				ind3--;
+			}
+			// // if statement if numbers are left
+			if (ind4 >= 0) {
+				y = (num2.number.charAt(ind4) == '1') ? 1 : 0; // stores 1 if the digit at that index
+				// is 1 if not then it stores o
+				ind4--; // deincrementer
+			}
+
+			if (x == 1 & y == 1) { // compare numbers
+				and = 1; //  use and operator
+			}
+			Answer = ((and == 1) ? "1" : "0") + Answer; // It stores the eac digit, like if and variable is 1, it will put 1 or if its 0 it will put 0
+		}
+		Binary result = new Binary(Answer); // Creates the binary Object
+		return result; // Returns the answer to getter and then it returns the answer in main class
+	}
 	
 
 
