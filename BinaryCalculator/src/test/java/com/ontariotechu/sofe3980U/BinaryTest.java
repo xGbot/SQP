@@ -153,5 +153,65 @@ public class BinaryTest
         Binary binary3=Binary.and(binary1,binary2);
         assertTrue(binary3.getValue().equals("1001"));
     }
+	
+	/**
+     * Test The or functions with two binary numbers of the same length
+     */
+    @Test
+    public void or()
+    {
+        Binary binary1=new Binary("1000");
+        Binary binary2=new Binary("1111");
+        Binary binary3=Binary.or(binary1,binary2);
+        assertTrue( binary3.getValue().equals("1111"));
+    }
+    /**
+     * Test The or functions with two binary numbers, the length of the first argument is less than the second
+     */
+    @Test
+    public void or2()
+    {
+        Binary binary1=new Binary("1010");
+        Binary binary2=new Binary("11");
+        Binary binary3=Binary.or(binary1,binary2);
+        assertTrue( binary3.getValue().equals("1011"));
+    }
+    /**
+     * Test The or functions with two binary numbers, the length of the first argument is greater than the second
+     */
+    @Test
+    public void or3()
+    {
+        Binary binary1=new Binary("11");
+        Binary binary2=new Binary("1010");
+        Binary binary3=Binary.or(binary1,binary2);
+        assertTrue( binary3.getValue().equals("1011"));
+    }
+    /**
+     * Test The or functions with a binary numbers with zero
+     */
+    @Test
+    public void or4()
+    {
+        Binary binary1=new Binary("0");
+        Binary binary2=new Binary("1010");
+        Binary binary3=Binary.or(binary1,binary2);
+        assertTrue( binary3.getValue().equals("1010"));
+    }
+    /**
+     * Test The or functions with two zeros
+     */
+    @Test
+    public void or5()
+    {
+        Binary binary1=new Binary("0");
+        Binary binary2=new Binary("0");
+        Binary binary3=Binary.or(binary1,binary2);
+        assertTrue( binary3.getValue().equals("0"));
+    }
+}
+
+
+	
 
 }
