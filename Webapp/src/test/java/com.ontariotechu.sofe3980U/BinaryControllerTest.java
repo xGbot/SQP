@@ -57,31 +57,125 @@ public class BinaryControllerTest {
 			.andExpect(model().attribute("operand1", "111"));
     }
 
+    // test case 1 for add function
     @Test
-	    public void postParameterAdd() throws Exception {
+	    public void postParameterAdd1() throws Exception {
         this.mvc.perform(post("/").param("operand1","1110").param("operator","+").param("operand2","1011"))//.andDo(print())
             .andExpect(status().isOk())
             .andExpect(view().name("result"))
 			.andExpect(model().attribute("result", "11001"))
 			.andExpect(model().attribute("operand1", "1110"));
     }
-
+    // test case 2 for add function
     @Test
-	    public void postParameterOr() throws Exception {
+	    public void postParameterAdd2() throws Exception {
+        this.mvc.perform(post("/").param("operand1","110").param("operator","+").param("operand2","10"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(view().name("result"))
+			.andExpect(model().attribute("result", "1000"))
+			.andExpect(model().attribute("operand1", "110"));
+    }
+    // test case 3 for add function
+    @Test
+	    public void postParameterAdd3() throws Exception {
+        this.mvc.perform(post("/").param("operand1","1101").param("operator","+").param("operand2","101"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(view().name("result"))
+			.andExpect(model().attribute("result", "10010"))
+			.andExpect(model().attribute("operand1", "1101"));
+    }
+    // test case 4 for add function
+    @Test
+	    public void postParameterAdd4() throws Exception {
+        this.mvc.perform(post("/").param("operand1","1111").param("operator","+").param("operand2","1"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(view().name("result"))
+			.andExpect(model().attribute("result", "10000"))
+			.andExpect(model().attribute("operand1", "1111"));
+    }
+
+    // test case 1 for or function
+    @Test
+	    public void postParameterOr1() throws Exception {
         this.mvc.perform(post("/").param("operand1","11010").param("operator","|").param("operand2","111"))//.andDo(print())
             .andExpect(status().isOk())
             .andExpect(view().name("result"))
 			.andExpect(model().attribute("result", "11111"))
 			.andExpect(model().attribute("operand1", "11010"));
     }
-
+    // test case 2 for or function
     @Test
-	    public void postParameterMult() throws Exception {
+	    public void postParameterOr2() throws Exception {
+        this.mvc.perform(post("/").param("operand1","1101").param("operator","|").param("operand2","101"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(view().name("result"))
+			.andExpect(model().attribute("result", "1101"))
+			.andExpect(model().attribute("operand1", "1101"));
+    }
+    // test case 3 for or function
+    @Test
+	    public void postParameterOr3() throws Exception {
+        this.mvc.perform(post("/").param("operand1","1111").param("operator","|").param("operand2","1"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(view().name("result"))
+			.andExpect(model().attribute("result", "1111"))
+			.andExpect(model().attribute("operand1", "1111"));
+    }
+
+    // test case 1 for multiplication function
+    @Test
+	    public void postParameterMult1() throws Exception {
         this.mvc.perform(post("/").param("operand1","101").param("operator","*").param("operand2","11101"))//.andDo(print())
             .andExpect(status().isOk())
             .andExpect(view().name("result"))
 			.andExpect(model().attribute("result", "10010001"))
 			.andExpect(model().attribute("operand1", "101"));
+    }
+    // test case 2 for multiplication function
+     @Test
+	    public void postParameterMult2() throws Exception {
+        this.mvc.perform(post("/").param("operand1","1101").param("operator","*").param("operand2","101"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(view().name("result"))
+			.andExpect(model().attribute("result", "1000001"))
+			.andExpect(model().attribute("operand1", "1101"));
+    }
+    // test case 3 for multiplication function
+     @Test
+	    public void postParameterMult3() throws Exception {
+        this.mvc.perform(post("/").param("operand1","1111").param("operator","*").param("operand2","1"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(view().name("result"))
+			.andExpect(model().attribute("result", "1111"))
+			.andExpect(model().attribute("operand1", "1111"));
+    }
+
+    // test case 1 for and function
+    @Test
+	    public void postParameterAnd1() throws Exception {
+        this.mvc.perform(post("/").param("operand1","1101").param("operator","&").param("operand2","101"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(view().name("result"))
+			.andExpect(model().attribute("result", "101"))
+			.andExpect(model().attribute("operand1", "1101"));
+    }
+    // test case 2 for and function
+    @Test
+	    public void postParameterAnd2() throws Exception {
+        this.mvc.perform(post("/").param("operand1","1111").param("operator","&").param("operand2","1"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(view().name("result"))
+			.andExpect(model().attribute("result", "1"))
+			.andExpect(model().attribute("operand1", "1111"));
+    }
+    // test case 3 for and function
+    @Test
+	    public void postParameterAnd3() throws Exception {
+        this.mvc.perform(post("/").param("operand1","110").param("operator","&").param("operand2","10"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(view().name("result"))
+			.andExpect(model().attribute("result", "10"))
+			.andExpect(model().attribute("operand1", "110"));
     }
 
 }
