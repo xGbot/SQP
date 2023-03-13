@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: binarycalculator-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: binarycalculator
+  template:
+    metadata:
+      labels:
+        app: binarycalculator
+    spec:
+      containers:
+        - image: gcr.io/causal-sky-380421/binarycalculator
+          name: binarycalculator
+          ports:
+            - containerPort: 8080
+    
+       
